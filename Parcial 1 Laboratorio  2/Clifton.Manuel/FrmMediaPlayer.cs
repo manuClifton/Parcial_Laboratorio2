@@ -21,12 +21,16 @@ namespace Clifton.Manuel
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
         }
 
         private void btnCargar_Click(object sender, EventArgs e)
         {
+            if (listRutas.SelectedIndex != -1)
+            {
                 ruta = listRutas.SelectedItem.ToString();
+            }
+                
 
         }
 

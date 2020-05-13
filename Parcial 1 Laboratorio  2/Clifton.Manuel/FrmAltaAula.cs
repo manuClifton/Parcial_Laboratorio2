@@ -32,6 +32,36 @@ namespace Clifton.Manuel
             listAulas = aulas;
         }
 
+        public FrmAltaAula(Aula aula)
+        {
+            unAula = aula;
+            cmbColores.Text = unAula.ColorSala.ToString();
+            cmbColores.Enabled = false;
+            cmbDocetes.Text = unAula.Docente.Nombre.ToString() + unAula.Docente.Apellido.ToString();
+            cmbDocetes.Enabled = false;
+            cmbTurno.Text = unAula.Turno.ToString();
+            cmbTurno.Enabled = false;
+            CargarAlumnos();
+
+        }
+
+        private void CargarAlumnos()
+        {
+            string sexo = "";
+            foreach (Alumno item in unAula.Alumnos)
+            {
+                if (item.Femenino)
+                {
+                    sexo = "Femenino";
+                }
+                else
+                {
+                    sexo = "Masculino";
+                }
+                listAlumnosEnSala.Items.Add($"{item.Nombre} {item.Apellido} {sexo}");
+            }
+        }
+
         private void FrmAltaAula_Load(object sender, EventArgs e)
         {
             cmbTurno.DataSource = Enum.GetNames(typeof(ETurno));

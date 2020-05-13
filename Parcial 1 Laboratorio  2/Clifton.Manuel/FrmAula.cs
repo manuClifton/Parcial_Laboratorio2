@@ -14,7 +14,12 @@ namespace Clifton.Manuel
     public partial class FrmAula : Form
     {
         FrmAlumnosPorAula instAlumosXAula;
+
+        FrmAltaAula instAula;
+
+
         List<Aula> listAulas;
+        Aula unAula;
  
 
         public FrmAula()
@@ -42,5 +47,23 @@ namespace Clifton.Manuel
 
         }
 
+        private void dataGridAula_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            foreach (Aula item in listAulas)
+            {
+                if (item.ColorSala.ToString() == dataGridAula.CurrentRow.Cells[0].Value.ToString() &&
+                    item.Turno.ToString() == dataGridAula.CurrentRow.Cells[1].Value.ToString()
+                    )
+                {
+                    unAula = item;
+                }
+            }
+
+            instAula = new FrmAltaAula(unAula);
+            if (instAula.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+        }
     }//
 }//
