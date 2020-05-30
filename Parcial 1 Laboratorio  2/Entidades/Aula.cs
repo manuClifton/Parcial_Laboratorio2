@@ -67,7 +67,23 @@ namespace Entidades
             return false;
         }
 
+        public static bool operator ==(Aula aula1, Aula aula2)
+        {
 
+            if (!(aula1 is null) && !(aula2 is null))
+            {
+                if (aula1.colorSala == aula2.colorSala && aula1.turno == aula2.turno)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public static bool operator !=(Aula aula1, Aula aula2)
+        {
+            return !(aula1 == aula2);
+        }
 
 
         public override string ToString()

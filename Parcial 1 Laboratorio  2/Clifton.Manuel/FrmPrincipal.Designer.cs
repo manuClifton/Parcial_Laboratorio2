@@ -33,6 +33,7 @@
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnHardcodear = new System.Windows.Forms.Button();
             this.panelSubMenuReporte = new System.Windows.Forms.Panel();
+            this.btnVideos = new System.Windows.Forms.Button();
             this.btnAumnosPorAula = new System.Windows.Forms.Button();
             this.btnRecTotalJardin = new System.Windows.Forms.Button();
             this.btnSueldoNoDocente = new System.Windows.Forms.Button();
@@ -74,7 +75,6 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.btnResponsables = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnVideos = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelSubMenuReporte.SuspendLayout();
             this.panelSubMenuArchivo.SuspendLayout();
@@ -139,6 +139,22 @@
             this.panelSubMenuReporte.Size = new System.Drawing.Size(158, 244);
             this.panelSubMenuReporte.TabIndex = 4;
             this.panelSubMenuReporte.Visible = false;
+            // 
+            // btnVideos
+            // 
+            this.btnVideos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnVideos.FlatAppearance.BorderSize = 0;
+            this.btnVideos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVideos.ForeColor = System.Drawing.Color.LightGray;
+            this.btnVideos.Location = new System.Drawing.Point(0, 200);
+            this.btnVideos.Name = "btnVideos";
+            this.btnVideos.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnVideos.Size = new System.Drawing.Size(158, 40);
+            this.btnVideos.TabIndex = 6;
+            this.btnVideos.Text = "Videos Insitucionales";
+            this.btnVideos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVideos.UseVisualStyleBackColor = true;
+            this.btnVideos.Click += new System.EventHandler(this.btnVideos_Click);
             // 
             // btnAumnosPorAula
             // 
@@ -261,7 +277,7 @@
             this.btnAltaAula.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnAltaAula.Size = new System.Drawing.Size(158, 40);
             this.btnAltaAula.TabIndex = 3;
-            this.btnAltaAula.Text = "Alta Aula";
+            this.btnAltaAula.Text = "Alta/Editar - Aula";
             this.btnAltaAula.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAltaAula.UseVisualStyleBackColor = true;
             this.btnAltaAula.Click += new System.EventHandler(this.btnAltaAula_Click);
@@ -634,22 +650,6 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // btnVideos
-            // 
-            this.btnVideos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnVideos.FlatAppearance.BorderSize = 0;
-            this.btnVideos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVideos.ForeColor = System.Drawing.Color.LightGray;
-            this.btnVideos.Location = new System.Drawing.Point(0, 200);
-            this.btnVideos.Name = "btnVideos";
-            this.btnVideos.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnVideos.Size = new System.Drawing.Size(158, 40);
-            this.btnVideos.TabIndex = 6;
-            this.btnVideos.Text = "Videos Insitucionales";
-            this.btnVideos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVideos.UseVisualStyleBackColor = true;
-            this.btnVideos.Click += new System.EventHandler(this.btnVideos_Click);
             // 
             // FrmPrincipal
             // 

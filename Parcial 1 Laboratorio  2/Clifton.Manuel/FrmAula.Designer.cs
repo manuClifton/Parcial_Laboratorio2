@@ -93,7 +93,7 @@
             this.dataGridAula.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridAula.Size = new System.Drawing.Size(492, 532);
             this.dataGridAula.TabIndex = 1;
-            this.dataGridAula.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridAula_CellClick);
+//            this.dataGridAula.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridAula_CellClick);
             // 
             // Column1
             // 

@@ -128,10 +128,10 @@
             this.btnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAgregar.Location = new System.Drawing.Point(352, 373);
+            this.btnAgregar.Location = new System.Drawing.Point(350, 360);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(289, 0);
+            this.btnAgregar.Size = new System.Drawing.Size(289, 44);
             this.btnAgregar.TabIndex = 9;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -142,10 +142,10 @@
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelar.Location = new System.Drawing.Point(73, 374);
+            this.btnCancelar.Location = new System.Drawing.Point(51, 360);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(224, 0);
+            this.btnCancelar.Size = new System.Drawing.Size(226, 44);
             this.btnCancelar.TabIndex = 10;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -296,9 +296,9 @@
             this.panel2.Controls.Add(this.Lb_Dni);
             this.panel2.Controls.Add(this.Lb_Apellido);
             this.panel2.Controls.Add(this.Lb_Nombre);
-            this.panel2.Location = new System.Drawing.Point(0, 100);
+            this.panel2.Location = new System.Drawing.Point(0, 39);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(653, 376);
+            this.panel2.Size = new System.Drawing.Size(653, 437);
             this.panel2.TabIndex = 32;
             // 
             // numValorHora

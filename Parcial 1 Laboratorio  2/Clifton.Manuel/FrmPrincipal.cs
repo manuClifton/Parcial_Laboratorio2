@@ -27,13 +27,14 @@ namespace Clifton.Manuel
         FrmDinero instDinero;
 
         FrmAltaAlumno instAltaAlumno; 
-        btnAceptar instAltaAula;
+        FrmAltaAula instAltaAula;
         FrmAlta instAlta;
         FrmMediaPlayer intMediaPlayer;
         
 
 
-        List<Docente> docentes;
+        List<Docente> docentesDisponibles;
+        //List<Docente> docentesNoDisponibles;
 
         List<Administrativo> noDocentes;
 
@@ -50,7 +51,8 @@ namespace Clifton.Manuel
         {
             InitializeComponent();
             
-            docentes = new List<Docente>();
+            docentesDisponibles = new List<Docente>();
+            //docentesNoDisponibles = new List<Docente>();
             noDocentes = new List<Administrativo>();
             responsables = new List<Responsable>();
             alumnosSinAula = new List<Alumno>();
@@ -58,11 +60,16 @@ namespace Clifton.Manuel
             aulas = new List<Aula>();
         }
 
-        public List<Docente> Docentes
+        public List<Docente> DocentesDisponibles
         {
-            get { return this.docentes; }
-            set { this.docentes = value; }
+            get { return this.docentesDisponibles; }
+            set { this.docentesDisponibles = value; }
         }
+        //public List<Docente> DocentesNoDisponibles
+        //{
+        //    get { return this.docentesNoDisponibles; }
+        //    set { this.docentesNoDisponibles = value; }
+        //}
 
         public List<Administrativo> NoDocente
         {
@@ -127,11 +134,11 @@ namespace Clifton.Manuel
         public void harcodear()
         {
             //Docentes
-            docentes.Add(new Docente("Carlos", "Monzon", 25147896, false, Convert.ToDateTime("1/2/2000 11:30:00 AM"), Convert.ToDateTime("5:00:00 PM"), 250));
-            docentes.Add(new Docente("Pepe", "Argento", 352478899, false, Convert.ToDateTime("1/2/2000 7:00:00 AM"), Convert.ToDateTime("5:00:00 PM"), 250));
-            docentes.Add(new Docente("Lucia", "Gonzalez", 425896377, true, Convert.ToDateTime("1/2/2000 8:00:00 AM"), Convert.ToDateTime("5:00:00 PM"), 250));
-            docentes.Add(new Docente("Ana", "Lopez", 547286785, true, Convert.ToDateTime("1/2/2000 12:00:00 AM"), Convert.ToDateTime("5:00:00 PM"), 250));
-            docentes.Add(new Docente("Manuel", "Clifton", 68422398, false, Convert.ToDateTime("1/2/2000 9:00:00 AM"), Convert.ToDateTime("5:00:00 PM"), 250));
+            docentesDisponibles.Add(new Docente("Carlos", "Monzon", 25147896, false, Convert.ToDateTime("1/2/2000 11:30:00 AM"), Convert.ToDateTime("5:00:00 PM"), 250));
+            docentesDisponibles.Add(new Docente("Pepe", "Argento", 352478899, false, Convert.ToDateTime("1/2/2000 7:00:00 AM"), Convert.ToDateTime("5:00:00 PM"), 250));
+            docentesDisponibles.Add(new Docente("Lucia", "Gonzalez", 425896377, true, Convert.ToDateTime("1/2/2000 8:00:00 AM"), Convert.ToDateTime("5:00:00 PM"), 250));
+            docentesDisponibles.Add(new Docente("Ana", "Lopez", 547286785, true, Convert.ToDateTime("1/2/2000 12:00:00 AM"), Convert.ToDateTime("5:00:00 PM"), 250));
+            docentesDisponibles.Add(new Docente("Manuel", "Clifton", 68422398, false, Convert.ToDateTime("1/2/2000 9:00:00 AM"), Convert.ToDateTime("5:00:00 PM"), 250));
 
 
             //No Docente
@@ -458,8 +465,8 @@ namespace Clifton.Manuel
             instAlta.SetDocente();
             if (instAlta.ShowDialog() == DialogResult.OK)
             {
-                this.Docentes.Add(instAlta.UnDocente);
-                instDocentes = new FrmDocente(docentes);
+                this.DocentesDisponibles.Add(instAlta.UnDocente);
+                instDocentes = new FrmDocente(docentesDisponibles);
                 this.AbrirFormHijo(instDocentes);
             }
             else
@@ -520,20 +527,21 @@ namespace Clifton.Manuel
             sonido.Play();
 
             //instAltaAula = new FrmAltaAula(docentes, alumnosSinAula, aulas);
-            instAltaAula = new btnAceptar();
+            instAltaAula = new FrmAltaAula();
             instAltaAula.ListAlumnosConAula = alumnosConAula;
             instAltaAula.ListAlumnosSinAula = alumnosSinAula;
-            instAltaAula.ListDocentes = docentes;
+            instAltaAula.ListDocentesDisponibles = docentesDisponibles;
+            //instAltaAula.ListDocentesNoDisponibles = docentesNoDisponibles;
             instAltaAula.ListAulas = aulas;
 
 
             if (instAltaAula.ShowDialog() == DialogResult.OK)
             {
-                this.aulas.Add(instAltaAula.UnAula);
-                alumnosSinAula = instAltaAula.ListAlumnosSinAula;
-                alumnosConAula = instAltaAula.ListAlumnosConAula;
-
-
+                this.aulas = instAltaAula.ListAulas;
+                this.alumnosSinAula = instAltaAula.ListAlumnosSinAula;
+                this.alumnosConAula = instAltaAula.ListAlumnosConAula;
+                this.docentesDisponibles = instAltaAula.ListDocentesDisponibles;
+                //docentesNoDisponibles = instAltaAula.ListDocentesNoDisponibles;
 
                 //foreach (Alumno item in instAltaAula.listAlumnosConAula)  // ESTO NO VA MAS AHORA LE PASO LA LISTA DE ALUNOS CON AULA Y AGREGO EN EL OTRO FORM
                 //{
@@ -543,11 +551,11 @@ namespace Clifton.Manuel
                 //    }
                 //}
                 //alumnosConAula = instAltaAula.listAlumnosConAula;   // NO VA MAS ESTO SE PUEDE BORRAR
-                instAula = new FrmAula(aulas);
+                this.instAula = new FrmAula(aulas);
                 this.AbrirFormHijo(instAula);
-                instAlumnos = new FrmAlumnos();
-                instAlumnos.ListAlumnosSinAula = alumnosSinAula;
-                instAlumnos.CargarSinAula();
+                this.instAlumnos = new FrmAlumnos();
+                this.instAlumnos.ListAlumnosSinAula = alumnosSinAula;
+                this.instAlumnos.CargarSinAula();
                 this.AbrirFormHijo2(instAlumnos);
             }
             else
@@ -578,7 +586,7 @@ namespace Clifton.Manuel
         private void btnSueldoDocente_Click(object sender, EventArgs e)
         {
             instDinero = new FrmDinero();
-            instDinero.ListDocentes = docentes;
+            instDinero.ListDocentes = docentesDisponibles;
             instDinero.CargarSueldoDocentes();
             instDinero.ShowDialog();
         }
@@ -657,7 +665,7 @@ namespace Clifton.Manuel
             SoundPlayer sonido = new SoundPlayer(@"C:\Windows\Media\chimes.wav");
             sonido.Play();
 
-            if (docentes.Count == 0)
+            if (docentesDisponibles.Count == 0)
             {
                 MessageBox.Show("Primero debe dar de alta un Docente.");
             }
@@ -736,7 +744,7 @@ namespace Clifton.Manuel
             instAlumnos.ListAlumnosSinAula = alumnosSinAula;
             instAlumnos.CargarSinAula();
 
-            instDocentes = new FrmDocente(docentes);
+            instDocentes = new FrmDocente(docentesDisponibles);
             AbrirFormHijo(instDocentes);
             AbrirFormHijo2(instAlumnos);
         }
@@ -766,9 +774,11 @@ namespace Clifton.Manuel
             instAlumnos.ListAlumnosSinAula = alumnosSinAula;
             instAlumnos.CargarSinAula();
 
-            instDocentes = new FrmDocente(docentes);
+            instDocentes = new FrmDocente(docentesDisponibles);
             AbrirFormHijo(instDocentes);
             AbrirFormHijo2(instAlumnos);
+            btnHardcodear.Enabled = false;
+            btnHardcodear.Visible = false;
         }
 
         private void btnVideos_Click(object sender, EventArgs e)

@@ -1,6 +1,6 @@
 ﻿namespace Clifton.Manuel
 {
-    partial class btnAceptar
+    partial class FrmAltaAula
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(btnAceptar));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAltaAula));
             this.Lb_Color = new System.Windows.Forms.Label();
             this.Lb_Docente = new System.Windows.Forms.Label();
             this.Lb_Turno = new System.Windows.Forms.Label();
@@ -48,7 +48,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.Lb_AlumnosSinAula = new System.Windows.Forms.Label();
             this.listAlumnosSinSala = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAceptarAula = new System.Windows.Forms.Button();
             this.panelAltaAula.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureSalir)).BeginInit();
             this.panel1.SuspendLayout();
@@ -106,12 +106,13 @@
             // 
             // btnAgregar
             // 
+            this.btnAgregar.Enabled = false;
             this.btnAgregar.Location = new System.Drawing.Point(919, 467);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(149, 43);
             this.btnAgregar.TabIndex = 5;
-            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.Text = "Agregar / Editar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
@@ -167,18 +168,16 @@
             // 
             // Lb_FormAlta
             // 
-            this.Lb_FormAlta.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Lb_FormAlta.AutoSize = true;
             this.Lb_FormAlta.Enabled = false;
             this.Lb_FormAlta.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lb_FormAlta.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.Lb_FormAlta.Location = new System.Drawing.Point(201, 12);
+            this.Lb_FormAlta.Location = new System.Drawing.Point(411, 9);
             this.Lb_FormAlta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lb_FormAlta.Name = "Lb_FormAlta";
-            this.Lb_FormAlta.Size = new System.Drawing.Size(718, 27);
+            this.Lb_FormAlta.Size = new System.Drawing.Size(147, 21);
             this.Lb_FormAlta.TabIndex = 1;
-            this.Lb_FormAlta.Text = "Alta de Aula";
+            this.Lb_FormAlta.Text = "Alta/Editar - Aula";
             this.Lb_FormAlta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureSalir
@@ -277,15 +276,15 @@
             this.listAlumnosSinSala.DragDrop += new System.Windows.Forms.DragEventHandler(this.listAlumnosSinSala_DragDrop);
             this.listAlumnosSinSala.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listAlumnosSinSala_MouseDown);
             // 
-            // button1
+            // btnAceptarAula
             // 
-            this.button1.Location = new System.Drawing.Point(970, 75);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Aceptar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnAceptarAula.Location = new System.Drawing.Point(970, 75);
+            this.btnAceptarAula.Name = "btnAceptarAula";
+            this.btnAceptarAula.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptarAula.TabIndex = 12;
+            this.btnAceptarAula.Text = "Aceptar";
+            this.btnAceptarAula.UseVisualStyleBackColor = true;
+            this.btnAceptarAula.Click += new System.EventHandler(this.btnAceptarAula_Click);
             // 
             // btnAceptar
             // 
@@ -293,7 +292,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(210)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(1081, 533);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnAceptarAula);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Lb_Docente);
@@ -314,6 +313,7 @@
             this.Text = "Alta de Aula";
             this.Load += new System.EventHandler(this.FrmAltaAula_Load);
             this.panelAltaAula.ResumeLayout(false);
+            this.panelAltaAula.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureSalir)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -345,6 +345,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label Lb_AlumnosSinAula;
         private System.Windows.Forms.ListBox listAlumnosSinSala;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAceptarAula;
     }
 }

@@ -15,7 +15,7 @@ namespace Clifton.Manuel
     {
        // FrmAlumnosPorAula instAlumosXAula;
 
-        btnAceptar instAula;
+        FrmAltaAula instAula;
 
 
         List<Aula> listAulas;
@@ -47,23 +47,23 @@ namespace Clifton.Manuel
 
         }
 
-        private void dataGridAula_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            foreach (Aula item in listAulas)
-            {
-                if (item.ColorSala.ToString() == dataGridAula.CurrentRow.Cells[0].Value.ToString() &&   // PREGUNTAR A LUCAS COMO TOMAR LOS VALORES DE UNA CELDA PARA COMPARA CON AULAS EXISTENTES
-                    item.Turno.ToString() == dataGridAula.CurrentRow.Cells[1].Value.ToString() 
-                    )
-                {
-                    unAula = item;
-                }
-            }
+        //private void dataGridAula_CellClick(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    foreach (Aula item in listAulas)
+        //    {
+        //        if (item.ColorSala.ToString() == dataGridAula.CurrentRow.Cells[0].Value.ToString() &&   // PREGUNTAR A LUCAS COMO TOMAR LOS VALORES DE UNA CELDA PARA COMPARA CON AULAS EXISTENTES
+        //            item.Turno.ToString() == dataGridAula.CurrentRow.Cells[1].Value.ToString() 
+        //            )
+        //        {
+        //            unAula = item;
+        //        }
+        //    }
 
-            instAula = new btnAceptar(unAula);
-            if (instAula.ShowDialog() == DialogResult.OK)
-            {
+        //    instAula = new FrmAltaAula(unAula);
+        //    if (instAula.ShowDialog() == DialogResult.OK)
+        //    {
 
-            }
-        }
+        //    }
+        //}
     }//
 }//
