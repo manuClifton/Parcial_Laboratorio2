@@ -116,9 +116,9 @@
             // 
             this.btnHardcodear.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnHardcodear.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnHardcodear.Location = new System.Drawing.Point(0, 563);
+            this.btnHardcodear.Location = new System.Drawing.Point(0, 564);
             this.btnHardcodear.Name = "btnHardcodear";
-            this.btnHardcodear.Size = new System.Drawing.Size(158, 23);
+            this.btnHardcodear.Size = new System.Drawing.Size(158, 22);
             this.btnHardcodear.TabIndex = 5;
             this.btnHardcodear.Text = "Hardcodear - boton sin diseño";
             this.btnHardcodear.UseVisualStyleBackColor = true;
@@ -134,7 +134,7 @@
             this.panelSubMenuReporte.Controls.Add(this.btnSueldoDocente);
             this.panelSubMenuReporte.Controls.Add(this.btnInfoPadres);
             this.panelSubMenuReporte.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubMenuReporte.Location = new System.Drawing.Point(0, 318);
+            this.panelSubMenuReporte.Location = new System.Drawing.Point(0, 312);
             this.panelSubMenuReporte.Name = "panelSubMenuReporte";
             this.panelSubMenuReporte.Size = new System.Drawing.Size(158, 244);
             this.panelSubMenuReporte.TabIndex = 4;
@@ -242,7 +242,7 @@
             this.btnReporte.FlatAppearance.BorderSize = 0;
             this.btnReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReporte.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnReporte.Location = new System.Drawing.Point(0, 278);
+            this.btnReporte.Location = new System.Drawing.Point(0, 272);
             this.btnReporte.Name = "btnReporte";
             this.btnReporte.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnReporte.Size = new System.Drawing.Size(158, 40);
@@ -262,7 +262,7 @@
             this.panelSubMenuArchivo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubMenuArchivo.Location = new System.Drawing.Point(0, 109);
             this.panelSubMenuArchivo.Name = "panelSubMenuArchivo";
-            this.panelSubMenuArchivo.Size = new System.Drawing.Size(158, 169);
+            this.panelSubMenuArchivo.Size = new System.Drawing.Size(158, 163);
             this.panelSubMenuArchivo.TabIndex = 2;
             this.panelSubMenuArchivo.Visible = false;
             // 
@@ -275,7 +275,7 @@
             this.btnAltaAula.Location = new System.Drawing.Point(0, 120);
             this.btnAltaAula.Name = "btnAltaAula";
             this.btnAltaAula.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnAltaAula.Size = new System.Drawing.Size(158, 40);
+            this.btnAltaAula.Size = new System.Drawing.Size(158, 37);
             this.btnAltaAula.TabIndex = 3;
             this.btnAltaAula.Text = "Alta/Editar - Aula";
             this.btnAltaAula.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -503,6 +503,7 @@
             // 
             // panelContenedor1
             // 
+            this.panelContenedor1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panelContenedor1.Location = new System.Drawing.Point(164, 178);
             this.panelContenedor1.Name = "panelContenedor1";
             this.panelContenedor1.Size = new System.Drawing.Size(642, 316);
@@ -510,9 +511,10 @@
             // 
             // panelContenedor2
             // 
-            this.panelContenedor2.Location = new System.Drawing.Point(829, 14);
+            this.panelContenedor2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panelContenedor2.Location = new System.Drawing.Point(827, 14);
             this.panelContenedor2.Name = "panelContenedor2";
-            this.panelContenedor2.Size = new System.Drawing.Size(474, 477);
+            this.panelContenedor2.Size = new System.Drawing.Size(476, 477);
             this.panelContenedor2.TabIndex = 6;
             // 
             // panelNoDocente

@@ -18,6 +18,11 @@ namespace Entidades
         private float precioCuota;
         private Responsable responsable;
 
+        public Alumno()
+        {
+
+        }
+
         public Alumno(string nombre, string apellido, int dni, bool femenino, float precioCuota) : base(nombre, apellido, dni, femenino)
         {
             this.precioCuota = precioCuota;

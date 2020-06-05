@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Entidades
 {
@@ -15,11 +16,17 @@ namespace Entidades
     {
         Portería = 100, Cocina = 110, Sexretaría = 140, Tesorería = 240, Dirección = 180
     }
-
+    [XmlInclude(typeof(Docente))]
+    [XmlInclude(typeof(Administrativo))]
     public abstract class Personal : Persona
     {
         private DateTime horaEntrada;
         private DateTime horaSalida;
+
+        public Personal()
+        {
+
+        }
 
         protected Personal(string nombre, string apellido, int dni, bool femenino, DateTime hrEntrada, DateTime hrSalida) : base(nombre, apellido, dni, femenino)
         {

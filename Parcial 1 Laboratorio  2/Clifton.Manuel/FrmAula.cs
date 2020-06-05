@@ -41,9 +41,15 @@ namespace Clifton.Manuel
             {
                 fila = dataGridAula.Rows.Add();
                 dataGridAula.Rows[fila].Cells[0].Value = Aux.ColorSala;
-                dataGridAula.Rows[fila].Cells[1].Value = $"{Aux.Docente.Nombre} {Aux.Docente.Apellido}";
-                dataGridAula.Rows[fila].Cells[2].Value = Aux.Turno;
+                dataGridAula.Rows[fila].Cells[1].Value = Aux.Turno;
+                dataGridAula.Rows[fila].Cells[2].Value = $"{Aux.Docente.Nombre} {Aux.Docente.Apellido}";
             }
+            
+
+        }
+
+        private void Lb_Nombre_Click(object sender, EventArgs e)
+        {
 
         }
 

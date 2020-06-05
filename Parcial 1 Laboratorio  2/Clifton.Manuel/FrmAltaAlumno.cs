@@ -55,7 +55,7 @@ namespace Clifton.Manuel
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             bool sexo;
-            if (Validaciones.ValidarString(txtNombre.Text) &&
+            if (Validaciones.ValidarString(txtNombre.Text) && // REVISAR!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 Validaciones.ValidarString(txtApellido.Text) &&
                 Validaciones.ValidarString(txtDni.Text) &&
                 Validaciones.ValidarString(cmbSexo.Text) &&
@@ -64,26 +64,33 @@ namespace Clifton.Manuel
             {
                 if (this.listBoxResponsables.SelectedIndex != -1)
                 {
-                    if (Validaciones.ValidarFlotante(numPrecio.Text, 100000, 2500))
+                    if (Validaciones.ValidarEntero(txtDni.Text,99999999,1000000))
                     {
-                        if (cmbSexo.Text == "Femenino")
+                        if (Validaciones.ValidarFlotante(numPrecio.Text, 100000, 2499))
                         {
-                            sexo = true;
+                            if (cmbSexo.Text == "Femenino")
+                            {
+                                sexo = true;
+                            }
+                            else
+                            {
+                                sexo = false;
+                            }
+                            unAlumno = new Alumno(txtNombre.Text, txtApellido.Text, int.Parse(txtDni.Text), sexo, float.Parse(numPrecio.Value.ToString()));
+                            unAlumno.Responsable = this.listResponsables[listBoxResponsables.SelectedIndex];
+                            unAlumno.Legajo = legajoAlumno;
+                            legajoAlumno++;
+                            this.DialogResult = DialogResult.OK;
                         }
                         else
                         {
-                            sexo = false;
+                            MessageBox.Show("El precio minimo es de 2500 y maximo 100000");
                         }
-                        unAlumno = new Alumno(txtNombre.Text, txtApellido.Text, int.Parse(txtDni.Text), sexo, float.Parse(numPrecio.Value.ToString()));
-                        unAlumno.Responsable = this.listResponsables[listBoxResponsables.SelectedIndex];
-                        unAlumno.Legajo = legajoAlumno;
-                        legajoAlumno++;
-                        this.DialogResult = DialogResult.OK;
-                    }
-                    else
+                    }else
                     {
-                        MessageBox.Show("El precio minimo es de 2500 y maximo 100000");
+                        MessageBox.Show("El DNI es invalido");
                     }
+                    
                     
                 }else
                 {

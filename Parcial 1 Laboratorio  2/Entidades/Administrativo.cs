@@ -12,6 +12,10 @@ namespace Entidades
         static double SalarioBase;
 
 
+        public Administrativo()
+        {
+
+        }
         static Administrativo()
         {
             SalarioBase = 30000;

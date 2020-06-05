@@ -3,15 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Entidades
 {
-    public class Aula
+    [XmlInclude(typeof(Aula))]
+    public class Aula // : IMensaje<Aula>
     {
         private List<Alumno> alumnos;
         private EColor colorSala;
         private Docente docente;
         private ETurno turno;
+
+        public Aula()
+        {
+
+        }
 
         public Aula(EColor colorSala, Docente docente, ETurno turno)
         {
@@ -50,6 +57,7 @@ namespace Entidades
             get { return this.alumnos; }
         }
 
+      
 
         public static bool operator +(Aula aula, Alumno alumno)
         {
@@ -97,6 +105,17 @@ namespace Entidades
         }
 
 
+        // INTERFACE 
+
+        //public Aula AutoReferencia { 
+        //    get { return this; }
+        //    set { this.Docente = value.Docente; }
+        //}
+
+        //public string MostrarMsj()
+        //{
+        //    return this.ToString();
+        //}
 
 
 

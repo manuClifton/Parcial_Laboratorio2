@@ -7,9 +7,14 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Docente : Personal
+    public class Docente : Personal //, IMensaje<Docente>
     {
         private double valorHora;
+
+		public Docente()
+		{
+
+		}
 
 		public Docente(string nombre, string apellido, int dni, bool femenino, DateTime hrEntrada, DateTime hrSalida, double valorHora) : base(nombre, apellido, dni, femenino, hrEntrada, hrSalida)
 		{
@@ -48,6 +53,7 @@ namespace Entidades
 			get { return this.HoraSalida.ToString("HH:mm"); }
 		}
 
+		
 
 		protected override double CalcularSalario()
 		{
@@ -68,13 +74,17 @@ namespace Entidades
 			return sb.ToString();
 		}
 
-		
 
+		// INTERFACE
+		//public Docente AutoReferencia {
+		//	get { return this; }
+		//	set { this.Dni = value.Dni;  } 
+		//}
 
-
-
-
-
+		//public string MostrarMsj()
+		//{
+		//	return this.ToString();
+		//}
 
 
 

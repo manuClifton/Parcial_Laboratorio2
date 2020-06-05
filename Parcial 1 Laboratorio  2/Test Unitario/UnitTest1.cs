@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Entidades;
 using Clifton.Manuel;
+using System.Collections.Generic;
 
 namespace Test_Unitario
 {
@@ -45,7 +46,6 @@ namespace Test_Unitario
             {
                 Assert.IsNotNull(a1);
             }
-
         }
 
         public bool ValidarPersona(Persona p)
@@ -91,8 +91,7 @@ namespace Test_Unitario
 
             menuPrincipal.harcodear();
 
-            Assert.IsTrue(menuPrincipal.docentes.Count == 5 && menuPrincipal.alumnosSinAula.Count == 50);
-
+            Assert.IsTrue(menuPrincipal.DocentesDisponibles.Count == 5 && menuPrincipal.alumnosSinAula.Count == 50);
         }
 
         //+alumno
@@ -102,10 +101,9 @@ namespace Test_Unitario
 
             menuPrincipal.harcodear();
 
-            Aula aula = new Aula(EColor.Amarillo, menuPrincipal.docentes[0] ,ETurno.Tarde);
+            Aula aula = new Aula(EColor.Amarillo, menuPrincipal.DocentesDisponibles[0] ,ETurno.Tarde);
 
-            Assert.IsTrue(menuPrincipal.docentes.Count == 5 && menuPrincipal.alumnosSinAula.Count == 50);
-
+            Assert.IsTrue(menuPrincipal.DocentesDisponibles.Count == 5 && menuPrincipal.alumnosSinAula.Count == 50);
         }
 
 
@@ -114,6 +112,39 @@ namespace Test_Unitario
 
 
 
+        //[TestMethod]
+        //public void PruebaInterface()
+        //{
+        //    List<IMensaje> listaMsj = new List<IMensaje>();
+
+
+        //    Docente d1 = new Docente("Carlos", "Monzon", 25147896, false, Convert.ToDateTime("1/2/2000 11:30:00 AM"), Convert.ToDateTime("5:00:00 PM"), 250);
+        //    Docente d2 = new Docente("Pepe", "Argento", 352478899, false, Convert.ToDateTime("1/2/2000 7:00:00 AM"), Convert.ToDateTime("5:00:00 PM"), 250);
+        //    Docente d3 = new Docente("Lucia", "Gonzalez", 425896377, true, Convert.ToDateTime("1/2/2000 8:00:00 AM"), Convert.ToDateTime("5:00:00 PM"), 250);
+        //    Docente d4 = new Docente("Ana", "Lopez", 547286785, true, Convert.ToDateTime("1/2/2000 12:00:00 AM"), Convert.ToDateTime("5:00:00 PM"), 250);
+        //    Docente d5 = new Docente("Manuel", "Clifton", 68422398, false, Convert.ToDateTime("1/2/2000 9:00:00 AM"), Convert.ToDateTime("5:00:00 PM"), 250);
+
+        //    listaMsj.Add(d1);
+        //    listaMsj.Add(d2);
+        //    listaMsj.Add(d3);
+        //    listaMsj.Add(d4);
+        //    listaMsj.Add(d5);
+
+        //    listaMsj.Add(new Aula(EColor.Amarillo, d1, ETurno.Mañana));
+        //    listaMsj.Add(new Aula(EColor.Naranja, d2, ETurno.Mañana));
+        //    listaMsj.Add(new Aula(EColor.Rojo, d4, ETurno.Mañana));
+        //    listaMsj.Add(new Aula(EColor.Verde, d5, ETurno.Mañana));
+
+        //    string salida = "";
+
+        //    foreach (IMensaje item in listaMsj)
+        //    {
+        //       salida += item.MostrarMsj();
+        //    }
+
+        //    Assert.IsTrue(salida.Length > 200);
+
+        //}
 
 
 

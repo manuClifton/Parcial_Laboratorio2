@@ -130,6 +130,12 @@
     <Compile Include="FrmDinero.Designer.cs">
       <DependentUpon>FrmDinero.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProbandoMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProbandoMenu.Designer.cs">
+      <DependentUpon>ProbandoMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmAlta.resx">
@@ -173,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDinero.resx">
       <DependentUpon>FrmDinero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProbandoMenu.resx">
+      <DependentUpon>ProbandoMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

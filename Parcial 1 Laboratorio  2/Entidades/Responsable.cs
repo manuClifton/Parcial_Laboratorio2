@@ -18,6 +18,11 @@ namespace Entidades
         private EParentesco parentesco;
         private string telefono;
 
+        public Responsable()
+        {
+
+        }
+
         public Responsable(string nombre, string apellido, int dni, bool femenino, EParentesco parentesco, string telefono) : base(nombre, apellido, dni, femenino)
         {
             this.parentesco = parentesco;

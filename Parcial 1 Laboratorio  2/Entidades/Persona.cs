@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Entidades
 {
+    [XmlInclude(typeof(Personal))]
+    [XmlInclude(typeof(Alumno))]
+    [XmlInclude(typeof(Responsable))]
     public abstract class Persona
     {
         protected string apellido;
@@ -13,11 +17,16 @@ namespace Entidades
         protected bool femenino;
         protected string nombre;
 
+        public Persona()
+        {
+
+        }
+
 
         protected Persona(string nombre, string apellido, int dni)
         {
-            this.nombre = nombre;
-            this.apellido = apellido;
+            this.Nombre = nombre;
+            this.Apellido = apellido;
 
             this.Dni = dni;
         }

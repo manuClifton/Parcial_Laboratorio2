@@ -45,6 +45,7 @@
     <Compile Include="Alumno.cs" />
     <Compile Include="Aula.cs" />
     <Compile Include="Docente.cs" />
+    <Compile Include="IMensaje.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="Personal.cs" />
     <Compile Include="PersonaInvalidaException.cs" />
