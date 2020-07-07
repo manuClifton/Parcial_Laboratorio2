@@ -53,7 +53,7 @@ namespace Entidades
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(base.ToString());
-            sb.AppendLine($"Cargp : {this.cargo}");
+            sb.AppendLine($"Cargo : {this.cargo}");
             sb.AppendLine($"Salario : {this.CalcularSalario()}");
 
             return sb.ToString();

@@ -26,6 +26,7 @@ namespace Clifton.Manuel
             CargarTabla();
         }
 
+
         private void CargarTabla()
         {
             this.dataGridResponsable.Rows.Clear();
@@ -49,10 +50,10 @@ namespace Clifton.Manuel
             }
         }
 
-
-
-
-
-
+        private void FrmResponsables_Load(object sender, EventArgs e)
+        {
+            dataGridResponsable.ReadOnly = true;
+            dataGridResponsable.AllowUserToAddRows = false;
+        }
     }//
 }//

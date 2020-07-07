@@ -48,10 +48,12 @@ namespace Clifton.Manuel
 
         }
 
-        private void Lb_Nombre_Click(object sender, EventArgs e)
+        private void FrmAula_Load(object sender, EventArgs e)
         {
-
+            dataGridAula.ReadOnly = true;
+            dataGridAula.AllowUserToAddRows = false;
         }
+
 
         //private void dataGridAula_CellClick(object sender, DataGridViewCellEventArgs e)
         //{

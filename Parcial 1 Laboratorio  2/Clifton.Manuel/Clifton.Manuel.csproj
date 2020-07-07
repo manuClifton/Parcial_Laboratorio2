@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmAlta.cs">
+    <Compile Include="FrmAltaPersonal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAlta.Designer.cs">
-      <DependentUpon>FrmAlta.cs</DependentUpon>
+    <Compile Include="FrmAltaPersonal.Designer.cs">
+      <DependentUpon>FrmAltaPersonal.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmAltaAlumno.cs">
       <SubType>Form</SubType>
@@ -82,11 +82,35 @@
     <Compile Include="FrmAula.Designer.cs">
       <DependentUpon>FrmAula.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmEditarAdministrativo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEditarAdministrativo.Designer.cs">
+      <DependentUpon>FrmEditarAdministrativo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBajaAula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBajaAula.Designer.cs">
+      <DependentUpon>FrmBajaAula.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmDocente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmDocente.Designer.cs">
       <DependentUpon>FrmDocente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEditarAlumno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEditarAlumno.Designer.cs">
+      <DependentUpon>FrmEditarAlumno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEditarResponsable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEditarResponsable.Designer.cs">
+      <DependentUpon>FrmEditarResponsable.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmListadoPadres.cs">
       <SubType>Form</SubType>
@@ -130,16 +154,16 @@
     <Compile Include="FrmDinero.Designer.cs">
       <DependentUpon>FrmDinero.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProbandoMenu.cs">
+    <Compile Include="FrmBaja.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProbandoMenu.Designer.cs">
-      <DependentUpon>ProbandoMenu.cs</DependentUpon>
+    <Compile Include="FrmBaja.Designer.cs">
+      <DependentUpon>FrmBaja.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmAlta.resx">
-      <DependentUpon>FrmAlta.cs</DependentUpon>
+    <EmbeddedResource Include="FrmAltaPersonal.resx">
+      <DependentUpon>FrmAltaPersonal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAltaAlumno.resx">
       <DependentUpon>FrmAltaAlumno.cs</DependentUpon>
@@ -155,6 +179,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAula.resx">
       <DependentUpon>FrmAula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEditarAdministrativo.resx">
+      <DependentUpon>FrmEditarAdministrativo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBajaAula.resx">
+      <DependentUpon>FrmBajaAula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEditarAlumno.resx">
+      <DependentUpon>FrmEditarAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEditarResponsable.resx">
+      <DependentUpon>FrmEditarResponsable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmListadoPadres.resx">
       <DependentUpon>FrmListadoPadres.cs</DependentUpon>
@@ -180,8 +216,8 @@
     <EmbeddedResource Include="FrmDinero.resx">
       <DependentUpon>FrmDinero.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProbandoMenu.resx">
-      <DependentUpon>ProbandoMenu.cs</DependentUpon>
+    <EmbeddedResource Include="FrmBaja.resx">
+      <DependentUpon>FrmBaja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

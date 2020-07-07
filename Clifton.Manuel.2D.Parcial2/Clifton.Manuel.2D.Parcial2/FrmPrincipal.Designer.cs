@@ -72,6 +72,7 @@
             // 
             // txtProximo
             // 
+            this.txtProximo.Enabled = false;
             this.txtProximo.Location = new System.Drawing.Point(235, 63);
             this.txtProximo.Name = "txtProximo";
             this.txtProximo.Size = new System.Drawing.Size(169, 20);

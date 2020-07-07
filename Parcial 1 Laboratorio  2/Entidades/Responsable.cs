@@ -42,6 +42,19 @@ namespace Entidades
         }
 
 
+        public static bool operator ==(Responsable r1, Responsable r2)
+        {
+            if (!(r1 is null))
+            {
+                return (r1.Dni == r2.dni);
+            }
+            return false;
+        }
+        public static bool operator !=(Responsable r1, Responsable r2)
+        {
+            return !(r1 == r2);
+        }
+
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();

@@ -109,5 +109,7 @@ namespace Clifton.Manuel
         {
             this.DialogResult = DialogResult.Cancel;
         }
+
+
     }//
 }//

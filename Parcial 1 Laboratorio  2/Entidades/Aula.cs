@@ -55,23 +55,22 @@ namespace Entidades
         public List<Alumno> Alumnos
         {
             get { return this.alumnos; }
+            set { this.alumnos = value; }
         }
 
       
-
+        //REVISAR PORQUE ROMPE
         public static bool operator +(Aula aula, Alumno alumno)
         {
 
                 if (!(aula is null) && !(alumno is null) )
                 {
-                    if (aula.alumnos.Count < 30 && !(aula.alumnos.Contains(alumno)))
-                    {
-                        aula.alumnos.Add(alumno);
-                        return true;
-                    }
+                  if (!(aula.alumnos.Contains(alumno) && aula.alumnos.Count < 30 ))
+                  {
+                      aula.alumnos.Add(alumno);
+                      return true;
+                  }
                 }
-               
-            
             return false;
         }
 

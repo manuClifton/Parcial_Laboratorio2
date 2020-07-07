@@ -51,6 +51,10 @@ namespace Clifton.Manuel
             }
         }
 
-
+        private void FrmNoDocente_Load(object sender, EventArgs e)
+        {
+            dataGridNoDocente.ReadOnly = true;
+            dataGridNoDocente.AllowUserToAddRows = false;
+        }
     }//
 }//

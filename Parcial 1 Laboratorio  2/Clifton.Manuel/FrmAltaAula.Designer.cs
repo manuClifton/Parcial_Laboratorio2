@@ -169,7 +169,6 @@
             // Lb_FormAlta
             // 
             this.Lb_FormAlta.AutoSize = true;
-            this.Lb_FormAlta.Enabled = false;
             this.Lb_FormAlta.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lb_FormAlta.ForeColor = System.Drawing.SystemColors.MenuBar;
             this.Lb_FormAlta.Location = new System.Drawing.Point(411, 9);
@@ -286,7 +285,7 @@
             this.btnAceptarAula.UseVisualStyleBackColor = true;
             this.btnAceptarAula.Click += new System.EventHandler(this.btnAceptarAula_Click);
             // 
-            // btnAceptar
+            // FrmAltaAula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -308,7 +307,7 @@
             this.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "btnAceptar";
+            this.Name = "FrmAltaAula";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alta de Aula";
             this.Load += new System.EventHandler(this.FrmAltaAula_Load);

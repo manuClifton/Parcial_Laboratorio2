@@ -82,7 +82,6 @@
             // Lb_TipoDeAlta
             // 
             this.Lb_TipoDeAlta.AutoSize = true;
-            this.Lb_TipoDeAlta.Enabled = false;
             this.Lb_TipoDeAlta.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lb_TipoDeAlta.ForeColor = System.Drawing.SystemColors.MenuBar;
             this.Lb_TipoDeAlta.Location = new System.Drawing.Point(381, 9);

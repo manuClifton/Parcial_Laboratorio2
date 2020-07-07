@@ -28,7 +28,7 @@ namespace Entidades
         }
         public static bool ValidarStringSoloLetras(string cadena)
         {
-            char[] alfabeto = "abcdefghijklmñnopqrstuvwxyz".ToCharArray();
+            char[] alfabeto = "abcdefghijklmñnopqrstuvwxyz ".ToCharArray();
             bool retorno = true;
             int contador = 0;
 

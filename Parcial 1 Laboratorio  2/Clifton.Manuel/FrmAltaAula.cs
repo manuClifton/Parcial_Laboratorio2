@@ -28,6 +28,7 @@ namespace Clifton.Manuel
         public FrmAltaAula()
         {
             InitializeComponent();
+            unAula = new Aula();
         }
 
         public List<Docente> ListDocentesDisponibles
@@ -62,24 +63,30 @@ namespace Clifton.Manuel
             set { this.unAula = value; }
         }
 
-
         /// <summary>
         /// Carga alumnos en la lista de alumnos en sala
         /// </summary>
         private void CargarAlumnos()
         {
             string sexo = "";
-            foreach (Alumno item in unAula.Alumnos)
+            if (!(unAula.Alumnos is null))
             {
-                if (item.Femenino)
+                foreach (Alumno item in unAula.Alumnos)
                 {
-                    sexo = "Femenino";
+                    if (item.Femenino)
+                    {
+                        sexo = "Femenino";
+                    }
+                    else
+                    {
+                        sexo = "Masculino";
+                    }
+                    listAlumnosEnSala.Items.Add($"{item.Nombre} {item.Apellido} {sexo}");
                 }
-                else
-                {
-                    sexo = "Masculino";
-                }
-                listAlumnosEnSala.Items.Add($"{item.Nombre} {item.Apellido} {sexo}");
+            }
+            else
+            {
+                MessageBox.Show("Aula vacia");
             }
         }
 
@@ -114,7 +121,7 @@ namespace Clifton.Manuel
                     ////listDocentesNoDisponibles.Add(doc);
                     //}
                 cmbDocetes.Items.Add($"{doc.Nombre} {doc.Apellido}");
-            }
+                }
 
 
 
@@ -255,6 +262,7 @@ namespace Clifton.Manuel
                             if (item.ColorSala == color && item.Turno == turno)
                             {
                                 unAula = item;
+                                unAula.Alumnos = item.Alumnos;
                                 cmbDocetes.Text = $"{unAula.Docente.Nombre} {unAula.Docente.Apellido}";
                                 flagExistia = true;
                                 break;

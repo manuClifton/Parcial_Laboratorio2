@@ -104,25 +104,10 @@ namespace Clifton.Manuel
             }
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        private void FrmAlumnos_Load(object sender, EventArgs e)
+        {
+            dataGridAlumnos.ReadOnly = true;
+            dataGridAlumnos.AllowUserToAddRows = false;
+        }
     }//
 }//

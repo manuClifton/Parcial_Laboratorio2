@@ -41,7 +41,7 @@ namespace Entidades
             get { return this.apellido; }
             set 
             {
-                ValidarPersonaSinApellido(value);
+                //ValidarPersonaSinApellido(value);
                 this.apellido = value; 
             }
         }
@@ -51,7 +51,7 @@ namespace Entidades
             get { return this.nombre; }
             set 
             {
-                ValidarPersonaSinNombre(value);
+               // ValidarPersonaSinNombre(value);
                 this.nombre = value; 
             }
         }
@@ -65,7 +65,7 @@ namespace Entidades
             }
             set
             {
-                ValidarPersonaSinDni(value);
+             //   ValidarPersonaSinDni(value);
                 this.dni = value; 
             }
         }
@@ -103,29 +103,7 @@ namespace Entidades
             return sb.ToString();
         }
 
-        public void ValidarPersonaSinDni(int value)
-        {
-            if (value < 1000000 )
-            {
-                throw new PersonaInvalidaException("DNI Invalido");
-            }
-        }
-
-        public void ValidarPersonaSinNombre(string value)
-        {
-            if (Validaciones.ValidarString(value) == false)
-            {
-                throw new PersonaInvalidaException("Nombre Invalido");
-            }
-        }
-
-        public void ValidarPersonaSinApellido(string value)
-        {
-            if (Validaciones.ValidarString(value) == false)
-            {
-                throw new PersonaInvalidaException("Apellido Invalido");
-            }
-        }
+      
 
 
     }//

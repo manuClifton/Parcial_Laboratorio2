@@ -91,7 +91,7 @@ namespace Test_Unitario
 
             menuPrincipal.harcodear();
 
-            Assert.IsTrue(menuPrincipal.DocentesDisponibles.Count == 5 && menuPrincipal.alumnosSinAula.Count == 50);
+            Assert.IsTrue(menuPrincipal.Docentes.Count == 5 && menuPrincipal.alumnosSinAula.Count == 50);
         }
 
         //+alumno
@@ -101,9 +101,9 @@ namespace Test_Unitario
 
             menuPrincipal.harcodear();
 
-            Aula aula = new Aula(EColor.Amarillo, menuPrincipal.DocentesDisponibles[0] ,ETurno.Tarde);
+            Aula aula = new Aula(EColor.Amarillo, menuPrincipal.Docentes[0] ,ETurno.Tarde);
 
-            Assert.IsTrue(menuPrincipal.DocentesDisponibles.Count == 5 && menuPrincipal.alumnosSinAula.Count == 50);
+            Assert.IsTrue(menuPrincipal.Docentes.Count == 5 && menuPrincipal.alumnosSinAula.Count == 50);
         }
 
 
