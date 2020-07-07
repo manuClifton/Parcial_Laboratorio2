@@ -170,7 +170,6 @@ namespace Clifton.Manuel._2D.Parcial2
 
             if (condicion)
             {
-                
                 path += "\\SegundoParcialUtn\\JardinUtn\\Serializaciones\\APROBADOS";
 
                 path += $"\\{al.Apellido}_{al.Nombre}_{DateTime.Now.ToString("dd_MM_yyyy")}.xml";
