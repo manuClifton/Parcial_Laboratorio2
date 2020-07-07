@@ -91,3 +91,4 @@ C:\Users\manu_\Desktop\Parciales\Parcial 1 Laboratorio  2\Clifton.Manuel\obj\Deb
 C:\Users\manu_\Desktop\Parciales\Parcial 1 Laboratorio  2\Clifton.Manuel\obj\Debug\Clifton.Manuel.FrmDinero.resources
 C:\Users\manu_\Desktop\Parcial_Laboratorio2\Parcial 1 Laboratorio  2\Clifton.Manuel\obj\Debug\Clifton.Manuel.FrmDinero.resources
 C:\Users\manu_\Desktop\Parcial_Laboratorio2\Parcial 1 Laboratorio  2\Clifton.Manuel\obj\Debug\Clifton.Manuel.FrmAltaAula.resources
+C:\Users\manu_\Desktop\Parcial_Laboratorio2\Parcial 1 Laboratorio  2\Clifton.Manuel\obj\Debug\Clifton.Manuel.ProbandoMenu.resources

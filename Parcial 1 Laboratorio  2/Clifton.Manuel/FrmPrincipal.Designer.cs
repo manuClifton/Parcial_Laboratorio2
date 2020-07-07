@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.btnHardcodear = new System.Windows.Forms.Button();
             this.panelSubMenuReporte = new System.Windows.Forms.Panel();
             this.btnVideos = new System.Windows.Forms.Button();
             this.btnAumnosPorAula = new System.Windows.Forms.Button();
@@ -100,7 +99,6 @@
             // 
             this.panelMenu.AutoScroll = true;
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.panelMenu.Controls.Add(this.btnHardcodear);
             this.panelMenu.Controls.Add(this.panelSubMenuReporte);
             this.panelMenu.Controls.Add(this.btnReporte);
             this.panelMenu.Controls.Add(this.panelSubMenuArchivo);
@@ -111,18 +109,6 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(158, 586);
             this.panelMenu.TabIndex = 0;
-            // 
-            // btnHardcodear
-            // 
-            this.btnHardcodear.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnHardcodear.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnHardcodear.Location = new System.Drawing.Point(0, 564);
-            this.btnHardcodear.Name = "btnHardcodear";
-            this.btnHardcodear.Size = new System.Drawing.Size(158, 22);
-            this.btnHardcodear.TabIndex = 5;
-            this.btnHardcodear.Text = "Hardcodear - boton sin diseño";
-            this.btnHardcodear.UseVisualStyleBackColor = true;
-            this.btnHardcodear.Click += new System.EventHandler(this.btnHardcodear_Click);
             // 
             // panelSubMenuReporte
             // 
@@ -747,7 +733,6 @@
         private System.Windows.Forms.Label Lb_Timer;
         private System.Windows.Forms.Button btnAumnosPorAula;
         private System.Windows.Forms.Label Lb_Fecha;
-        private System.Windows.Forms.Button btnHardcodear;
         private System.Windows.Forms.Button btnVideos;
     }
 }

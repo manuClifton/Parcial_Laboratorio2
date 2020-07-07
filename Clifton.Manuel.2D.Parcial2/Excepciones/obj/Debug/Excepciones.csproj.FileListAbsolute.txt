@@ -1,0 +1,6 @@
+C:\Users\manu_\Desktop\Clifton.Manuel.2D.Parcial2\Excepciones\bin\Debug\Excepciones.dll
+C:\Users\manu_\Desktop\Clifton.Manuel.2D.Parcial2\Excepciones\bin\Debug\Excepciones.pdb
+C:\Users\manu_\Desktop\Clifton.Manuel.2D.Parcial2\Excepciones\obj\Debug\Excepciones.csproj.CoreCompileInputs.cache
+C:\Users\manu_\Desktop\Clifton.Manuel.2D.Parcial2\Excepciones\obj\Debug\Excepciones.dll
+C:\Users\manu_\Desktop\Clifton.Manuel.2D.Parcial2\Excepciones\obj\Debug\Excepciones.pdb
+C:\Users\manu_\Desktop\Clifton.Manuel.2D.Parcial2\Excepciones\obj\Debug\Excepciones.csprojAssemblyReference.cache
