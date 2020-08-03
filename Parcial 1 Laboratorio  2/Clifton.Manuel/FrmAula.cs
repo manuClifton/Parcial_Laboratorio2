@@ -20,7 +20,6 @@ namespace Clifton.Manuel
 
         List<Aula> listAulas;
         Aula unAula;
- 
 
         public FrmAula()
         {
@@ -44,14 +43,13 @@ namespace Clifton.Manuel
                 dataGridAula.Rows[fila].Cells[1].Value = Aux.Turno;
                 dataGridAula.Rows[fila].Cells[2].Value = $"{Aux.Docente.Nombre} {Aux.Docente.Apellido}";
             }
-            
-
         }
 
         private void FrmAula_Load(object sender, EventArgs e)
         {
             dataGridAula.ReadOnly = true;
             dataGridAula.AllowUserToAddRows = false;
+            dataGridAula.RowHeadersVisible = false;
         }
 
 

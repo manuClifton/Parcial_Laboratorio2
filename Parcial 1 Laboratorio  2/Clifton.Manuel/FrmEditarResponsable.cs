@@ -53,8 +53,7 @@ namespace Clifton.Manuel
         {
             Lb_Editar.Text = "Editar Responsable";
             btnEditar.Enabled = false;
-            dataGridResponsable.ReadOnly = true;
-            dataGridResponsable.AllowUserToAddRows = false;
+            //dataGridResponsable.ReadOnly = true;
         }
 
 

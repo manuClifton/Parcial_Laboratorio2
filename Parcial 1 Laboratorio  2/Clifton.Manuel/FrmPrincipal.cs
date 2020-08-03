@@ -18,7 +18,7 @@ namespace Clifton.Manuel
     public partial class FrmPrincipal : Form
     {
         
-        string Path = @"C:\Users\manu_\Desktop\ParciaDePruebasMenus\Parcial 1 Laboratorio  2\Clifton.Manuel\bin\Debug";
+        string Path = @"C:\Users\manu_\Desktop\Parcial_Laboratorio2\Parcial 1 Laboratorio  2\Clifton.Manuel\bin\Debug";
 
         //Forms Hijos del Principal
         FrmDocente instDocentes;
@@ -723,11 +723,13 @@ namespace Clifton.Manuel
             instBaja = new FrmBaja();
             instBaja.ListAlumnosConAula = AlumnosConAula;
             instBaja.ListAlumnosSinAula = AlumnosSinAula;
+            instBaja.ListAulas = Aulas;
             instBaja.CargarFormAlumno();
             if (instBaja.ShowDialog() == DialogResult.OK)
             {
                 AlumnosConAula = instBaja.ListAlumnosConAula;
                 AlumnosSinAula = instBaja.ListAlumnosSinAula;
+                Aulas = instBaja.ListAulas;
 
                 instAlumnos = new FrmAlumnos();
                 instAlumnos.ListAlumnosSinAula = AlumnosSinAula;

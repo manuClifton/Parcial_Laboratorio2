@@ -127,13 +127,25 @@ namespace Clifton.Manuel
                 {
                     if (index == 1)
                     {
-                        MessageBox.Show($"Se dio de Baja a {unAlumno.Nombre}, {unAlumno.Apellido}");
+                        
+                        // recorrer las aulas y remover al alumno
+                        for (int i = 0; i < ListAulas.Count; i++)
+                        {
+                            for (int j = 0; j < ListAulas[i].Alumnos.Count; j++)
+                            {
+                                if (unAlumno == ListAulas[i].Alumnos[j])
+                                {
+                                    ListAulas[i].Alumnos.Remove(ListAulas[i].Alumnos[j]);
+                                }
+                            }
+                        }
                         ListAlumnosConAula.Remove(unAlumno);
+                        MessageBox.Show($"Se dio de Baja a {unAlumno.Nombre}, {unAlumno.Apellido}");
                     }
                     if (index == 2)
                     {
-                        MessageBox.Show($"Se dio de Baja a {unAlumno.Nombre}, {unAlumno.Apellido}");
                         ListAlumnosSinAula.Remove(unAlumno);
+                        MessageBox.Show($"Se dio de Baja a {unAlumno.Nombre}, {unAlumno.Apellido}");
                     }
                     this.DialogResult = DialogResult.OK;
                 }
@@ -195,7 +207,6 @@ namespace Clifton.Manuel
                         ListDocentes.Remove(unDocente);
                         this.DialogResult = DialogResult.OK;
                     }
-
                 }
                 else
                 {
@@ -267,6 +278,19 @@ namespace Clifton.Manuel
             return false;
         }
 
+        private bool VerificarSiExisteDocennte()
+        {
+            for (int i = 0; i < ListDocentes.Count; i++)
+            {
+                if (ListDocentes[i].Dni == Convert.ToInt64(txtDni.Text) && ListDocentes[i].Nombre == txtNombre.Text && ListDocentes[i].Apellido == txtApellido.Text)
+                {
+                    unDocente = ListDocentes[i];
+                    return true;
+                }
+            }
+            return false;
+        }
+
         int index = 0;
 
         private bool VerificarSiExisteAlumno()
@@ -307,18 +331,7 @@ namespace Clifton.Manuel
             return false;
         }
 
-        private bool VerificarSiExisteDocennte()
-        {
-            for (int i = 0; i < ListDocentes.Count; i++)
-            {
-                if (ListDocentes[i].Dni == Convert.ToInt64(txtDni.Text) && ListDocentes[i].Nombre == txtNombre.Text && ListDocentes[i].Apellido == txtApellido.Text)
-                {
-                    unDocente = ListDocentes[i];
-                    return true;
-                }
-            }
-            return false;
-        }
+       
         private bool VerificarSiExisteAdministrativo()
         {
             for (int i = 0; i < ListAdministrativo.Count; i++)

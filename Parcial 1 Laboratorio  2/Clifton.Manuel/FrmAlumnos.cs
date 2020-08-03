@@ -108,6 +108,7 @@ namespace Clifton.Manuel
         {
             dataGridAlumnos.ReadOnly = true;
             dataGridAlumnos.AllowUserToAddRows = false;
+            dataGridAlumnos.RowHeadersVisible = false;
         }
     }//
 }//

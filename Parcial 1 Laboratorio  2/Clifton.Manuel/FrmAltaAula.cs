@@ -66,7 +66,7 @@ namespace Clifton.Manuel
         /// <summary>
         /// Carga alumnos en la lista de alumnos en sala
         /// </summary>
-        private void CargarAlumnos()
+        private void CargarAlumnosEnSala()
         {
             string sexo = "";
             if (!(unAula.Alumnos is null))
@@ -276,7 +276,7 @@ namespace Clifton.Manuel
                         cmbColores.Enabled = false;
                         cmbDocetes.Enabled = false;
                         cmbTurno.Enabled = false;
-                        this.CargarAlumnos();
+                        this.CargarAlumnosEnSala();
                         flagAceptado = true;
                     }
                     else
@@ -322,13 +322,11 @@ namespace Clifton.Manuel
             ETurno turno = this.CargarTurno();
             foreach (Aula item in listAulas)
             {
-
                 if((item.ColorSala == EColor.Amarillo || item.ColorSala == EColor.Naranja || item.ColorSala == EColor.Rojo || item.ColorSala == EColor.Verde) && item.Turno == turno && item.Docente.Dni == this.listDocentesDisponibles[this.cmbDocetes.SelectedIndex].Dni)
                 {
                     MessageBox.Show("DOCENTE NO DISPONIBLE EN ESE TURNO");
                     cmbDocetes.Text = "";
                     return false;
-
                 }
             }
             return true;
@@ -428,18 +426,15 @@ namespace Clifton.Manuel
             }
             else
             {
-                // completar cuando el aula no existia.. AGREGAR EL AULA A LA LISTA DE AULAS
                 listAulas.Add(unAula);
                 this.DialogResult = DialogResult.OK;
             }
-
-
         }
 
 
-            private void btnCancelar_Click(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.Cancel;
+           this.DialogResult = DialogResult.Cancel;
         }
 
         /// <summary>

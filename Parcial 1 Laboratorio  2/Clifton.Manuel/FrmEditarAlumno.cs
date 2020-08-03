@@ -19,14 +19,12 @@ namespace Clifton.Manuel
         private List<Responsable> listResponsables;
         private List<Aula> listAulas;
 
-        private Alumno unAlumno;
-        private Alumno eliminarAlumno;
+        private Alumno editarAlumno;
 
         public FrmEditarAlumno()
         {
             InitializeComponent();
-            unAlumno = new Alumno();
-            //eliminarAlumno = new Alumno();
+            editarAlumno = new Alumno();
         }
 
         public List<Alumno> ListAlumnosConAula
@@ -57,55 +55,69 @@ namespace Clifton.Manuel
                 cmbResponsable.Items.Add($"{item.Nombre}, {item.Apellido}");
             }
             Lb_Editar.Text = "Editar Alumno";
+
             btnEditarAlumno.Enabled = false;
             dataGridAlumnos.ReadOnly = true;
-            dataGridAlumnos.AllowUserToAddRows = false;
         }
 
         private void btnEditarAlumno_Click(object sender, EventArgs e)
         {
             if (ValidarCampos())
             {
-                unAlumno.Nombre = txtNombre.Text;
-                unAlumno.Apellido = txtApellido.Text;
-                unAlumno.Dni = int.Parse(txtDni.Text);
-                unAlumno.PrecioCuota = float.Parse(txtImporte.Text);
-
-                if (cmbResponsable.SelectedIndex != -1)
+                if (editarAlumno.ColorSala == EColor.SinSala)
                 {
-                    for (int i = 0; i < ListResponsables.Count; i++)
+
+
+                    ListAlumnosSinAula[indiceAlumno].Nombre = txtNombre.Text;
+                    ListAlumnosSinAula[indiceAlumno].Apellido = txtApellido.Text;
+                    ListAlumnosSinAula[indiceAlumno].Dni = int.Parse(txtDni.Text);
+                    ListAlumnosSinAula[indiceAlumno].PrecioCuota = float.Parse(txtImporte.Text);
+
+                    if (cmbResponsable.SelectedIndex != -1)
                     {
-                        if (cmbResponsable.SelectedIndex == i)
+                        for (int i = 0; i < ListResponsables.Count; i++)
                         {
-                            unAlumno.Responsable = ListResponsables[i];
-                        }
-                    }
-                }
-
-                if (unAlumno.ColorSala == EColor.SinSala)
-                {
-                    // ListAlumnosSinAula.RemoveAt(indiceAlumno);
-                    //listAlumnosSinAula.Insert(indiceAlumno, unAlumno);
-                    ListAlumnosSinAula.Remove(eliminarAlumno);
-                    ListAlumnosSinAula.Add(unAlumno);
-                }
-                else
-                {
-                    // listAlumnosConAula.RemoveAt(indiceAlumno);
-                    // listAlumnosConAula.Insert(indiceAlumno, unAlumno);
-                    listAlumnosConAula.Remove(eliminarAlumno);
-                    listAlumnosConAula.Add(unAlumno);
-
-                    foreach (Aula item in ListAulas)
-                    {
-                        for (int i = 0; i < item.Alumnos.Count; i++)
-                        {
-                            if (item.Alumnos[i] == eliminarAlumno)
+                            if (cmbResponsable.SelectedIndex == i)
                             {
-                                item.Alumnos[i] = unAlumno;
+                                ListAlumnosSinAula[indiceAlumno].Responsable = ListResponsables[i];
                             }
                         }
                     }
+                }
+                else
+                {
+
+                    listAlumnosConAula[indiceAlumno].Nombre = txtNombre.Text;
+                    listAlumnosConAula[indiceAlumno].Apellido = txtApellido.Text;
+                    listAlumnosConAula[indiceAlumno].Dni = int.Parse(txtDni.Text);
+                    listAlumnosConAula[indiceAlumno].PrecioCuota = float.Parse(txtImporte.Text);
+                   
+                    if (cmbResponsable.SelectedIndex != -1)
+                    {
+                        for (int i = 0; i < ListResponsables.Count; i++)
+                        {
+                            if (cmbResponsable.SelectedIndex == i)
+                            {
+                                listAlumnosConAula[indiceAlumno].Responsable = ListResponsables[i];
+                            }
+                        }
+                    }
+                
+                    foreach (Aula item in ListAulas)
+                    {
+                        if (item.ColorSala == listAlumnosConAula[indiceAlumno].ColorSala)
+                        {
+                            for (int i = 0; i < item.Alumnos.Count; i++)
+                            {
+                                if (item.Alumnos[i] == editarAlumno)
+                                {
+                                    item.Alumnos[i] = listAlumnosConAula[indiceAlumno];
+                                }
+                            }
+                        }
+                    }
+
+
                 }
 
                 MessageBox.Show("Se Edito el Alumno correctamente");
@@ -113,15 +125,15 @@ namespace Clifton.Manuel
             }
         }
 
-        //  int indiceAlumno = 0;
+        int indiceAlumno = -1;
         private void dataGridAlumnos_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             flag = true;
-            // int index = 0;
-
+            int contador = 0;
             cmbResponsable.SelectedIndex = -1;
             cmbResponsable.Text = "";
 
+            //ARREGLAR EXCEPCION AL SELECCIONAR ROW SI ESTA BACIO.
             txtNombre.Text = dataGridAlumnos.Rows[dataGridAlumnos.CurrentCell.RowIndex].Cells[0].Value.ToString();
             txtApellido.Text = dataGridAlumnos.Rows[dataGridAlumnos.CurrentCell.RowIndex].Cells[1].Value.ToString();
             txtDni.Text = dataGridAlumnos.Rows[dataGridAlumnos.CurrentCell.RowIndex].Cells[2].Value.ToString();
@@ -131,63 +143,53 @@ namespace Clifton.Manuel
             {
                 if (item.Dni == int.Parse(txtDni.Text))
                 {
-                    unAlumno.Nombre = item.Nombre;
-                    unAlumno.Apellido = item.Apellido;
-                    unAlumno.Dni = item.Dni;
-                    unAlumno.ColorSala = item.ColorSala;
-                    unAlumno.Responsable = item.Responsable ;
-                    unAlumno.Legajo = item.Legajo;
-                    unAlumno.Femenino = item.Femenino;
-                    unAlumno.PrecioCuota = item.PrecioCuota;
+                    editarAlumno.Nombre = item.Nombre;
+                    editarAlumno.Apellido = item.Apellido;
+                    editarAlumno.Dni = item.Dni;
+                    editarAlumno.ColorSala = item.ColorSala;
+                    editarAlumno.Responsable = item.Responsable ;
+                    editarAlumno.Legajo = item.Legajo;
+                    editarAlumno.Femenino = item.Femenino;
+                    editarAlumno.PrecioCuota = item.PrecioCuota;
 
-                    eliminarAlumno = item;
-                    // indiceAlumno = index;
-                    //   index = 0;
+                    indiceAlumno = contador;
+                    
                     break;
                 }
-                // index++;
+                contador++;
             }
 
-            foreach (Alumno item in ListAlumnosSinAula)
+            if (indiceAlumno == -1)
             {
-                if (item.Dni == int.Parse(txtDni.Text))
+                contador = 0;
+
+                foreach (Alumno item in ListAlumnosSinAula)
                 {
-                    unAlumno.Nombre = item.Nombre;
-                    unAlumno.Apellido = item.Apellido;
-                    unAlumno.Dni = item.Dni;
-                    unAlumno.ColorSala = item.ColorSala;
-                    unAlumno.Responsable = item.Responsable;
-                    unAlumno.Legajo = item.Legajo;
-                    unAlumno.Femenino = item.Femenino;
-                    unAlumno.PrecioCuota = item.PrecioCuota;
+                    if (item.Dni == int.Parse(txtDni.Text))
+                    {
+                        editarAlumno.Nombre = item.Nombre;
+                        editarAlumno.Apellido = item.Apellido;
+                        editarAlumno.Dni = item.Dni;
+                        editarAlumno.ColorSala = item.ColorSala;
+                        editarAlumno.Responsable = item.Responsable;
+                        editarAlumno.Legajo = item.Legajo;
+                        editarAlumno.Femenino = item.Femenino;
+                        editarAlumno.PrecioCuota = item.PrecioCuota;
 
-                    eliminarAlumno = item;
-                    //  indiceAlumno = index;
-                    //index = 0;
-                    break;
+                        indiceAlumno = contador;
+
+                        break;
+                    }
+                    contador++;
                 }
-                //index++;
             }
-
-
-            txtResponsable.Text = $"{unAlumno.Responsable.Nombre} { unAlumno.Responsable.Apellido}";
+            
+            txtResponsable.Text = $"{editarAlumno.Responsable.Nombre} { editarAlumno.Responsable.Apellido}";
 
             btnEditarAlumno.Enabled = true;
-
-            //REVISAR ESTA PARTE. COMO AGREGAR EL RESPONSABLE DEL ALUMNO SELECCIONADO AL CMB
-            //for (int i = 0; i < ListResponsables.Count; i++)
-            //{
-            //    if (!(unAlumno.Responsable is null))
-            //    {
-            //        if (unAlumno.Responsable.Dni == ListResponsables[i].Dni)
-            //        {
-            //            break;
-            //        }
-            //    }
-            //}
         }
 
-        private bool flag = false;
+        private bool flag = false; // Si selecciono un alumno, Ya no busca mas y permite editar
         private void txtNombre_TextChanged(object sender, EventArgs e)
         {
             txtNombre.Text = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txtNombre.Text);

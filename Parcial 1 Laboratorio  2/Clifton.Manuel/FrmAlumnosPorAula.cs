@@ -30,6 +30,9 @@ namespace Clifton.Manuel
         private void FrmAlumnosPorAula_Load(object sender, EventArgs e)
         {
             cmbTurno.DataSource = Enum.GetNames(typeof(ETurno));
+            dataGridAlumnos.ReadOnly = true;
+            dataGridAlumnos.AllowUserToAddRows = false;
+            dataGridAlumnos.RowHeadersVisible = false;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

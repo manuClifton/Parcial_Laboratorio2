@@ -25,6 +25,9 @@ namespace Clifton.Manuel
         private void FrmListadoPadres_Load(object sender, EventArgs e)
         {
             cmbTurno.DataSource = Enum.GetNames(typeof(ETurno));
+            dataGridResponsable.ReadOnly = true;
+            dataGridResponsable.AllowUserToAddRows = false;
+            dataGridResponsable.RowHeadersVisible = false;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

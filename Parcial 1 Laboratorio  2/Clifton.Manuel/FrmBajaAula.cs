@@ -105,8 +105,6 @@ namespace Clifton.Manuel
         }
 
 
-
-
         private EColor CargarColor()
         {
             EColor color = EColor.SinSala;

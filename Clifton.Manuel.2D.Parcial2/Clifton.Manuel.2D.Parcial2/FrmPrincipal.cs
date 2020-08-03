@@ -78,7 +78,6 @@ namespace Clifton.Manuel._2D.Parcial2
             RealizarEvaluacion += evaluarAlumno;
 
             EnviaraAlumno += frmDos.Cargar;
-            
         }
 
         private void proximo(object textBox)
@@ -589,6 +588,7 @@ namespace Clifton.Manuel._2D.Parcial2
             {
                 hilos.Add(new Thread(new ParameterizedThreadStart(proximo)));
             }
+
             if (!hilos[0].IsAlive)
             {
                 hilos[0] = new Thread(new ParameterizedThreadStart(proximo));

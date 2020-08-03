@@ -55,6 +55,7 @@ namespace Clifton.Manuel
         {
             dataGridNoDocente.ReadOnly = true;
             dataGridNoDocente.AllowUserToAddRows = false;
+            dataGridNoDocente.RowHeadersVisible = false;
         }
     }//
 }//

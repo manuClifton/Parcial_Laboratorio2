@@ -23,5 +23,6 @@ namespace Archivos
         /// <param name="datos"></param>
         /// <returns></returns>
         bool Leer(string archivo, out T datos);
+
     }//
 }//

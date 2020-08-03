@@ -59,8 +59,6 @@ namespace Archivos
                 command.Connection = connection;
                 command.CommandText = query;
 
-                
-
                  dr = command.ExecuteReader();
             }
             catch (Exception ex)

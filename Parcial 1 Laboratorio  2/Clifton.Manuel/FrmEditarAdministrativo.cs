@@ -34,12 +34,12 @@ namespace Clifton.Manuel
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-
+            //TERMINAR EDICION
         }
 
         private void FrmEditarAdministrativo_Load(object sender, EventArgs e)
         {
-
+            //TERMINAR EDICION
         }
 
 
