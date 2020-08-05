@@ -106,14 +106,12 @@
             // 
             this.cmbCargo.BackColor = System.Drawing.SystemColors.MenuBar;
             this.cmbCargo.FormattingEnabled = true;
-            this.cmbCargo.Items.AddRange(new object[] {
-            "Femenino",
-            "Masculino"});
             this.cmbCargo.Location = new System.Drawing.Point(155, 325);
             this.cmbCargo.Margin = new System.Windows.Forms.Padding(4);
             this.cmbCargo.Name = "cmbCargo";
             this.cmbCargo.Size = new System.Drawing.Size(368, 21);
             this.cmbCargo.TabIndex = 42;
+            this.cmbCargo.TextChanged += new System.EventHandler(this.cmbCargo_TextChanged);
             // 
             // dateTimeHrSalida
             // 
@@ -155,6 +153,7 @@
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(368, 20);
             this.txtDni.TabIndex = 37;
+            this.txtDni.TextChanged += new System.EventHandler(this.txtDni_TextChanged);
             // 
             // btnCancelar
             // 
@@ -192,6 +191,7 @@
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(368, 20);
             this.txtApellido.TabIndex = 35;
+            this.txtApellido.TextChanged += new System.EventHandler(this.txtApellido_TextChanged);
             // 
             // txtNombre
             // 
@@ -366,6 +366,7 @@
             this.dataGridNoDocente.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridNoDocente.Size = new System.Drawing.Size(515, 379);
             this.dataGridNoDocente.TabIndex = 0;
+            this.dataGridNoDocente.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridNoDocente_RowHeaderMouseClick);
             // 
             // Column1
             // 

@@ -62,37 +62,42 @@ namespace Clifton.Manuel
         {
             if (ValidarCampos())
             {
-                this.unResponsable.Nombre = txtNombre.Text;
-                this.unResponsable.Apellido = txtApellido.Text;
-                this.unResponsable.Dni = int.Parse(txtDni.Text);
-                this.unResponsable.Telefono = txtTelefono.Text;
+                ListResponsables[indiceResposable].Nombre = txtNombre.Text;
+                ListResponsables[indiceResposable].Apellido = txtApellido.Text;
+                ListResponsables[indiceResposable].Dni = int.Parse(txtDni.Text);
+                ListResponsables[indiceResposable].Telefono = txtTelefono.Text;
+
+                //this.unResponsable.Nombre = txtNombre.Text;
+                //this.unResponsable.Apellido = txtApellido.Text;
+                //this.unResponsable.Dni = int.Parse(txtDni.Text);
+                //this.unResponsable.Telefono = txtTelefono.Text;
 
 
-                ListResponsables.Remove(eliminarResponsable);
-                ListResponsables.Add(unResponsable);
+                //ListResponsables.Remove(eliminarResponsable);
+                //ListResponsables.Add(unResponsable);
 
                 foreach (Aula item1 in ListAulas)
                 {
                     foreach (Alumno item2 in item1.Alumnos)
                     {
-                         if (item2.Responsable == eliminarResponsable)
+                         if (item2.Responsable == unResponsable)
                         {
-                            item2.Responsable = unResponsable;
+                            item2.Responsable = ListResponsables[indiceResposable];
                         }
                     }
                 }
                 foreach (Alumno item in ListAlumnosConAula)
                 {
-                    if (item.Responsable == eliminarResponsable)
+                    if (item.Responsable == unResponsable)
                     {
-                        item.Responsable = unResponsable;
+                        item.Responsable = ListResponsables[indiceResposable];
                     }
                 }
                 foreach (Alumno item in ListAlumnosSinAula)
                 {
-                    if (item.Responsable == eliminarResponsable)
+                    if (item.Responsable == unResponsable)
                     {
-                        item.Responsable = unResponsable;
+                        item.Responsable = ListResponsables[indiceResposable];
                     }
                 }
 
@@ -102,12 +107,13 @@ namespace Clifton.Manuel
                 DialogResult = DialogResult.OK;
             }
         }
-
+        int indiceResposable = -1;
         private void dataGridResponsable_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             flag = true;
+            int contador = 0;
 
-                txtNombre.Text = dataGridResponsable.Rows[dataGridResponsable.CurrentCell.RowIndex].Cells[0].Value.ToString();
+            txtNombre.Text = dataGridResponsable.Rows[dataGridResponsable.CurrentCell.RowIndex].Cells[0].Value.ToString();
                 txtApellido.Text = dataGridResponsable.Rows[dataGridResponsable.CurrentCell.RowIndex].Cells[1].Value.ToString();
                 txtDni.Text = dataGridResponsable.Rows[dataGridResponsable.CurrentCell.RowIndex].Cells[2].Value.ToString();
                 txtTelefono.Text = dataGridResponsable.Rows[dataGridResponsable.CurrentCell.RowIndex].Cells[5].Value.ToString();
@@ -122,18 +128,18 @@ namespace Clifton.Manuel
                         unResponsable.Telefono = item.Telefono;
                         unResponsable.Parentesco = item.Parentesco;
                         unResponsable.Femenino = item.Femenino;
-                  
 
-                        eliminarResponsable = item;
+                        indiceResposable = contador;
 
                         break;
                     }
-                }
+                contador++;
+            }
 
                 btnEditar.Enabled = true;         
         }
 
-        private bool flag = false;
+        private bool flag = false; // Si selecciono un alumno, Ya no busca mas y permite editar
         private void txtNombre_TextChanged(object sender, EventArgs e)
         {
              

@@ -418,7 +418,5 @@ namespace Clifton.Manuel
         {
             txtResponsable.Text = cmbResponsable.Text;
         }
-
-
     }
 }

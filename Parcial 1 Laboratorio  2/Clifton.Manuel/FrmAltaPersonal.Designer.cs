@@ -266,9 +266,6 @@
             // 
             this.cmbCargo.BackColor = System.Drawing.SystemColors.MenuBar;
             this.cmbCargo.FormattingEnabled = true;
-            this.cmbCargo.Items.AddRange(new object[] {
-            "Femenino",
-            "Masculino"});
             this.cmbCargo.Location = new System.Drawing.Point(157, 294);
             this.cmbCargo.Margin = new System.Windows.Forms.Padding(4);
             this.cmbCargo.Name = "cmbCargo";
@@ -315,7 +312,7 @@
             this.numValorHora.TabIndex = 7;
             this.numValorHora.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // FrmAlta
+            // FrmAltaPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -327,7 +324,7 @@
             this.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FrmAlta";
+            this.Name = "FrmAltaPersonal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alta de Docente";
             this.Load += new System.EventHandler(this.FrmAlta_Load);

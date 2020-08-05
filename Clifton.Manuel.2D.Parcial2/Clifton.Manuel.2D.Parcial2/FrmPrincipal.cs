@@ -80,6 +80,39 @@ namespace Clifton.Manuel._2D.Parcial2
             EnviaraAlumno += frmDos.Cargar;
         }
 
+        #region Porpiedades
+        public List<Alumno> Alumnos
+        {
+            get { return this.alumnos; }
+            set { this.alumnos = value; }
+        }
+        public List<Alumno> AlumnosEvaluados
+        {
+            get { return this.alumnosEvaluados; }
+            set { this.alumnosEvaluados = value; }
+        }
+        public List<Docente> Docentes
+        {
+            get { return this.docentes; }
+            set { this.docentes = value; }
+        }
+        public List<Aula> Aulas
+        {
+            get { return this.aulas; }
+            set { this.aulas = value; }
+        }
+        public List<Evaluacion> Evaluaciones
+        {
+            get { return this.evaluaciones; }
+            set { this.evaluaciones = value; }
+        }
+        public List<string> Observaciones
+        {
+            get { return this.observaciones; }
+            set { this.observaciones = value; }
+        }
+        #endregion
+
         private void proximo(object textBox)
         {
             if (Alumnos.Count > 0)
@@ -131,7 +164,6 @@ namespace Clifton.Manuel._2D.Parcial2
         void Evaluar(Alumno al, Docente docente)
         {
             al.CargarNota();
-
 
             Thread.Sleep(3000);
 
@@ -238,38 +270,7 @@ namespace Clifton.Manuel._2D.Parcial2
             }
         }
 
-        #region Porpiedades
-        public List<Alumno> Alumnos
-        {
-            get { return this.alumnos; }
-            set { this.alumnos = value; }
-        }
-        public List<Alumno> AlumnosEvaluados
-        {
-            get { return this.alumnosEvaluados; }
-            set { this.alumnosEvaluados = value; }
-        }
-        public List<Docente> Docentes
-        {
-            get { return this.docentes; }
-            set { this.docentes = value; }
-        }
-        public List<Aula> Aulas
-        {
-            get { return this.aulas; }
-            set { this.aulas = value; }
-        }
-        public List<Evaluacion> Evaluaciones
-        {
-            get { return this.evaluaciones; }
-            set { this.evaluaciones = value; }
-        }
-        public List<string>  Observaciones
-        {
-            get { return this.observaciones; }
-            set { this.observaciones = value; }
-        }
-        #endregion
+        
 
 
 
@@ -372,7 +373,7 @@ namespace Clifton.Manuel._2D.Parcial2
             int contador = 0;
             datos = SQL.Leer(connection, "SELECT * FROM Aulas");
             while (datos.Read())
-            {                            //nombre              //apellido         //dni          // edad         //direccion         // id          //responsable
+            {                          
                 Aulas.Add(new Aula((int)datos[0], datos[1].ToString() ));
                 contador++;
             }
@@ -597,5 +598,7 @@ namespace Clifton.Manuel._2D.Parcial2
 
             this.btnEmpezar.Click -= btnEmpezar_Click;
         }
+
+
     }//
 }//

@@ -51,9 +51,6 @@ namespace Test_Unitarios
         }
 
 
-       
-
-
         [TestMethod]
         public void DeserializeBinary()
         {
@@ -71,8 +68,6 @@ namespace Test_Unitarios
             Assert.IsTrue(xml.LeerBinario(path, out aux));
 
         }
-
-
 
 
 

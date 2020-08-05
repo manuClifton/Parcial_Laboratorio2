@@ -839,15 +839,15 @@ namespace Clifton.Manuel
         }
         private void btnEditarDocente_Click(object sender, EventArgs e)
         {
-
+            //TERMINAR EDITAR DOCENTE
         }
         private void btnEditarAdministrtivo_Click(object sender, EventArgs e)
         {
             instEditarAdministrativo = new FrmEditarAdministrativo();
-            instEditarAdministrativo.ListAdministrativo = NoDocentes;
+            instEditarAdministrativo.ListAdministrativos = NoDocentes;
             if (instEditarAdministrativo.ShowDialog() == DialogResult.OK)
             {
-                NoDocentes = instEditarAdministrativo.ListAdministrativo;
+                NoDocentes = instEditarAdministrativo.ListAdministrativos;
 
                 instNoDocente = new FrmNoDocente(NoDocentes);
                 this.AbrirFormHijo(instNoDocente);

@@ -34,8 +34,8 @@ namespace Archivos
             {
                 throw new GuardarLogsException();
             }
-
         }
+
         public bool GuardarXml(string archivo, T datos)
         {
             try

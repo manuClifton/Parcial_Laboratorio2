@@ -74,7 +74,6 @@ namespace Entidades
 
         public static bool operator +(List<Alumno> alumnos, Alumno alumno)
         {
-
             if (!(alumno is null))
             {
                 if ( !(alumnos.Contains(alumno)))
